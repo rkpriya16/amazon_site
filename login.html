@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-light">
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow-sm p-4" style="width: 22rem;">
+            <h2 class="text-center mb-4">Sign In</h2>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="bi bi-eye-slash" id="toggleIcon"></i>
+                        </button>
+                    </div>
+                    <div id="passwordHelp" class="form-text text-muted">
+                        Must be 8-20 characters, include a number, an uppercase letter, and a special character.
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <p id="error-message" class="text-danger mt-3"></p>
+            </form>
+            <p class="mt-3 text-center"><a href="#" style="text-decoration: none;">Forget password</a> Don't have an account? <a href="#" style="text-decoration: none;">Sign up here</a></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS for Handling Login and Password Validation -->
+    <script>
+        // Password Toggle Visibility
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+        const toggleIcon = document.querySelector('#toggleIcon');
+
+        togglePassword.addEventListener('click', function () {
+            // Toggle the type attribute between password and text
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // Toggle the icon
+            toggleIcon.classList.toggle('bi-eye');
+            toggleIcon.classList.toggle('bi-eye-slash');
+        });
+
+        // Client-side Password Validation
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission for demo purposes
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            // Password validation: 8-20 characters, at least one number, one uppercase, one special character
+            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/;
+
+            if (!passwordRegex.test(password)) {
+                errorMessage.textContent = "Password must be 8-20 characters long, contain at least one number, one uppercase letter, and one special character.";
+                return;
+            }
+
+            // Simple login validation (you can replace this with backend API call later)
+            if (email === "user@example.com" && password === "Password@123") {
+                // Login successful, redirect to packing process page
+                window.location.href = "index.html"; // Redirect to packing process page
+            } else {
+                // Display error message
+                errorMessage.textContent = "Invalid email or password!";
+                errorMessage.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

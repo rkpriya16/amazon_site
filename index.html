@@ -1,0 +1,93 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packing Process Workflow</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include Bootstrap Icons (optional for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-primary p-3">
+        <div class="container">
+            <h1 class="navbar-brand text-white">Amazon Packing Process</h1>
+            <a href="login.html" class="btn btn-light">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Packing Steps Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Packing Workflow</h2>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Step 1: Picking Items -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-box-seam display-4 text-primary"></i>
+                        <h5 class="card-title mt-3">Step 1: Picking Items</h5>
+                        <p class="card-text">Efficiently pick items from designated shelves using barcode scanners.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Quality Check -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-check-circle-fill display-4 text-success"></i>
+                        <h5 class="card-title mt-3">Step 2: Quality Check</h5>
+                        <p class="card-text">Ensure all items are in good condition before packing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Packing the Items -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-archive-fill display-4 text-info"></i>
+                        <h5 class="card-title mt-3">Step 3: Packing the Items</h5>
+                        <p class="card-text">Carefully pack the items into boxes with protective materials.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Labeling -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-upc-scan display-4 text-warning"></i>
+                        <h5 class="card-title mt-3">Step 4: Labeling</h5>
+                        <p class="card-text">Label each package with shipping information for tracking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Shipping -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-truck display-4 text-danger"></i>
+                        <h5 class="card-title mt-3">Step 5: Shipping</h5>
+                        <p class="card-text">Send the packages to the shipping area for delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center p-3 mt-5">
+        <p>&copy; 2024 Amazon Packing Process Guide. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
